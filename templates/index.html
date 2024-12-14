@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular Disease Prediction</title>
+</head>
+<body>
+    <h1>Cardiovascular Disease Prediction</h1>
+    <form action="/" method="POST">
+        <label for="age">Age (In Years):</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender (1 for female, 0 for male):</label>
+        <input type="number" id="gender" name="gender" min="0" max="1" required><br><br>
+
+        <label for="restingBP">Resting Blood Pressure (94-200 (in mm HG)):</label>
+        <input type="number" id="restingBP" name="restingBP" min="94" max="200" required><br><br>
+
+        <label for="serumcholesterol">Serum Cholesterol (126-564 (in mg/dl)):</label>
+        <input type="number" id="serumcholesterol" name="serumcholesterol" min="126" max="564" required><br><br>
+
+        <label for="fastingbloodsugar">Fasting Blood Sugar (0 or 1):</label>
+        <input type="number" id="fastingbloodsugar" name="fastingbloodsugar" min="0" max="1" required><br><br>
+
+        <label for="maxheartrate">Maximum Heart Rate Achieved (71-202 bpm):</label>
+        <input type="number" id="maxheartrate" name="maxheartrate" min="71" max="202" required><br><br>
+
+        <label for="oldpeak">Oldpeak (ST Depression) (0-6.2):</label>
+        <input type="number" step="0.1" id="oldpeak" name="oldpeak" min="0" max="6.2" required><br><br>
+
+        <label for="noofmajorvessels">Number of Major Vessels (0-3):</label>
+        <input type="number" id="noofmajorvessels" name="noofmajorvessels" min="0" max="3" required><br><br>
+
+        <label for="chestpain">Chest Pain Type (0-3):</label>
+        <input type="number" id="chestpain" name="chestpain" min="0" max="3" required><br><br>
+
+        <label for="restingelectro">Resting Electrocardiogram Results (0-2):</label>
+        <input type="number" id="restingelectro" name="restingelectro" min="0" max="2" required><br><br>
+
+        <label for="slope">Slope of Peak Exercise ST Segment (0-3):</label>
+        <input type="number" id="slope" name="slope" min="0" max="3" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
